@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DropTag — SEO image tags</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="grid-fade"></span>
+    </div>
+
+    <main class="shell">
+      <header class="top">
+        <div class="brand-row">
+          <div class="logo" aria-label="DropTag">
+            <span class="logo-mark" aria-hidden="true"></span>
+            <span class="logo-text">DropTag</span>
+          </div>
+          <p class="tagline">SEO tags, title &amp; clean filenames — one pass</p>
+        </div>
+        <span class="status-pill">Local · Ready</span>
+      </header>
+
+      <form id="tag-form" class="workspace" novalidate>
+        <div
+          id="dropzone"
+          class="dropzone"
+          tabindex="0"
+          role="button"
+          aria-label="Upload images"
+        >
+          <input
+            id="file-input"
+            type="file"
+            accept=".jpg,.jpeg,.png,.webp,.bmp,.tif,.tiff,image/*"
+            multiple
+            hidden
+          />
+          <div class="dropzone-inner">
+            <span class="dropzone-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 16V4m0 0l-4 4m4-4l4 4"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M4 14.5V17a3 3 0 003 3h10a3 3 0 003-3v-2.5"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+            <p class="dropzone-title">Drop images here</p>
+            <p class="dropzone-hint">PNG, JPG, WebP · click to browse</p>
+          </div>
+          <ul id="file-list" class="file-list" hidden></ul>
+        </div>
+
+        <div class="panel">
+          <div class="fields">
+            <label class="field">
+              <span>Title</span>
+              <input
+                id="title"
+                name="title"
+                type="text"
+                placeholder="Red running shoes product photo"
+                autocomplete="off"
+              />
+            </label>
+
+            <label class="field">
+              <span>Description</span>
+              <textarea
+                id="description"
+                name="description"
+                rows="2"
+                placeholder="Short SEO description"
+              ></textarea>
+            </label>
+
+            <label class="field field-grow">
+              <span>Keywords</span>
+              <textarea
+                id="keywords"
+                name="keywords"
+                rows="3"
+                placeholder="running shoes, red sneakers, footwear"
+                required
+              ></textarea>
+            </label>
+
+            <div class="footer-row">
+              <fieldset class="rating-field">
+                <legend>Rating</legend>
+                <div class="stars" id="stars" role="radiogroup" aria-label="Star rating">
+                  <button type="button" data-value="1" aria-label="1 star">★</button>
+                  <button type="button" data-value="2" aria-label="2 stars">★</button>
+                  <button type="button" data-value="3" aria-label="3 stars">★</button>
+                  <button type="button" data-value="4" aria-label="4 stars">★</button>
+                  <button type="button" data-value="5" aria-label="5 stars" class="on">★</button>
+                </div>
+                <input type="hidden" id="rating" name="rating" value="5" />
+              </fieldset>
+
+              <button id="submit-btn" type="submit" class="cta">
+                <span class="cta-label">
+                  Tag &amp; download
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M5 12h14m0 0l-5-5m5 5l-5 5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="cta-busy">
+                  <span class="spinner" aria-hidden="true"></span>
+                  Processing…
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <p id="toast" class="toast" role="status" hidden></p>
+    <script src="/static/app.js"></script>
+  </body>
+</html>

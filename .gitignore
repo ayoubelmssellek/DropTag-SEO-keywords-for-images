@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# App output / uploads
+images/*
+!images/.gitkeep
+output/*
+!output/.gitkeep
+*.jpg~
+*.jpeg~
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.tmp
