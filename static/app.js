@@ -1,4 +1,20 @@
 (() => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const siteHeader = document.querySelector(".site-header");
+  const mobileLinks = document.querySelectorAll(".main-nav a, .header-actions a");
+
+  menuToggle?.addEventListener("click", () => {
+    siteHeader.classList.toggle("nav-open");
+    menuToggle.textContent = siteHeader.classList.contains("nav-open") ? "×" : "☰";
+  });
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      siteHeader.classList.remove("nav-open");
+      if (menuToggle) menuToggle.textContent = "☰";
+    });
+  });
+
   const form = document.getElementById("tag-form");
   const dropzone = document.getElementById("dropzone");
   const fileInput = document.getElementById("file-input");
@@ -7,6 +23,10 @@
   const toast = document.getElementById("toast");
   const ratingInput = document.getElementById("rating");
   const starBtns = [...document.querySelectorAll("#stars button")];
+  const checkoutUrls = {
+    annual: "",
+    lifetime: "",
+  };
 
   /** @type {{ file: File, url: string }[]} */
   let items = [];
@@ -20,6 +40,21 @@
   function hideToast() {
     toast.hidden = true;
   }
+
+  document.querySelectorAll(".checkout-link").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const plan = link.dataset.plan;
+      const checkoutUrl = checkoutUrls[plan];
+      if (checkoutUrl) {
+        link.href = checkoutUrl;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        return;
+      }
+      event.preventDefault();
+      showToast(`Checkout link for the ${plan} plan is not configured yet.`, true);
+    });
+  });
 
   function setRating(value) {
     const n = Math.max(1, Math.min(5, Number(value) || 5));

@@ -3,144 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DropTag — SEO image tags</title>
+    <meta name="description" content="DropTag turns messy image libraries into searchable, marketplace-ready assets." />
+    <title>DropTag — Make every image discoverable</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
-    <div class="atmosphere" aria-hidden="true">
-      <span class="orb orb-a"></span>
-      <span class="orb orb-b"></span>
-      <span class="grid-fade"></span>
-    </div>
+    <div class="site-noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="DropTag home"><span class="brand-mark"><i></i><i></i><i></i></span><span>DropTag</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#product">Product</a><a href="#pricing">Pricing</a><a href="#guides">Guides</a>
+      </nav>
+      <div class="header-actions"><a class="signin" href="#workspace">Sign in</a><a class="button button-small" href="#workspace">Start tagging <span>↗</span></a></div>
+      <button class="menu-toggle" type="button" aria-label="Open navigation">☰</button>
+    </header>
 
-    <main class="shell">
-      <header class="top">
-        <div class="brand-row">
-          <div class="logo" aria-label="DropTag">
-            <span class="logo-mark" aria-hidden="true"></span>
-            <span class="logo-text">DropTag</span>
-          </div>
-          <p class="tagline">SEO tags, title &amp; clean filenames — one pass</p>
-        </div>
-        <span class="status-pill">Local · Ready</span>
-      </header>
+    <main>
+      <section id="home" class="page landing-page">
+        <div class="hero-copy reveal"><p class="eyebrow"><span class="eyebrow-dot"></span> The metadata layer for visual teams</p><h1>Make every image<br /><em>discoverable.</em></h1><p class="hero-lede">DropTag gives your image library the context it needs to rank, sell, and stay organized. Add rich metadata in seconds, not spreadsheet hours.</p><div class="hero-actions"><a class="button button-primary" href="#workspace">Try the workspace <span>↗</span></a><a class="text-link" href="#product">See how it works <span>↓</span></a></div><div class="hero-proof"><div class="avatar-stack"><span>AM</span><span>LS</span><span>NK</span></div><p><strong>2,400+</strong> creators ship cleaner assets with DropTag</p></div></div>
+        <div class="hero-visual reveal delay-1" aria-label="DropTag product preview"><div class="visual-glow"></div><div class="preview-window"><div class="preview-top"><span class="window-dots"><i></i><i></i><i></i></span><span class="preview-url">droptag / workspace</span><span class="preview-status">● synced</span></div><div class="preview-body"><div class="preview-side"><div class="mini-logo"><span class="brand-mark"><i></i><i></i><i></i></span></div><span class="side-active">＋ New batch</span><span>Library</span><span>Templates</span><span>Exports</span><div class="side-bottom"><span>◌</span><span>Settings</span></div></div><div class="preview-main"><div class="preview-heading"><div><span class="mini-label">MONDAY, SEPTEMBER 16</span><h3>Good morning, Amira</h3></div><span class="avatar">AM</span></div><div class="metric-row"><div><span>Assets enriched</span><strong>1,284</strong><small>↑ 18.4% this month</small></div><div><span>Avg. completeness</span><strong>94.8%</strong><small class="warm">↑ 6.2% this month</small></div></div><div class="preview-card"><div class="card-title"><span>Recent batch</span><b>View all →</b></div><div class="image-strip"><div class="image-tile tile-one"><span>+12 tags</span></div><div class="image-tile tile-two"><span>+8 tags</span></div><div class="image-tile tile-three"><span>+16 tags</span></div></div><div class="progress-label"><span>Spring campaign / 24 assets</span><b>88%</b></div><div class="progress"><i></i></div></div></div></div></div><div class="floating-note note-one"><span class="note-icon">✦</span><div><b>Metadata enriched</b><small>24 assets ready to export</small></div></div><div class="floating-note note-two"><span class="note-icon orange">↗</span><div><b>+32% discoverability</b><small>in the last 30 days</small></div></div></div>
+      </section>
 
-      <form id="tag-form" class="workspace" novalidate>
-        <div
-          id="dropzone"
-          class="dropzone"
-          tabindex="0"
-          role="button"
-          aria-label="Upload images"
-        >
-          <input
-            id="file-input"
-            type="file"
-            accept=".jpg,.jpeg,.png,.webp,.bmp,.tif,.tiff,image/*"
-            multiple
-            hidden
-          />
-          <div class="dropzone-inner">
-            <span class="dropzone-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 16V4m0 0l-4 4m4-4l4 4"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M4 14.5V17a3 3 0 003 3h10a3 3 0 003-3v-2.5"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </span>
-            <p class="dropzone-title">Drop images here</p>
-            <p class="dropzone-hint">PNG, JPG, WebP · click to browse</p>
-          </div>
-          <ul id="file-list" class="file-list" hidden></ul>
-        </div>
+      <section class="logo-band"><p>Built for teams who make visual work move</p><div class="logo-list"><span>PIXEL<span class="logo-light">HOUSE</span></span><span class="serif-logo">northstar</span><span class="mono-logo">/FRAME</span><span class="bold-logo">MUSE</span><span class="serif-logo">atelier</span></div></section>
 
-        <div class="panel">
-          <div class="fields">
-            <label class="field">
-              <span>Title</span>
-              <input
-                id="title"
-                name="title"
-                type="text"
-                placeholder="Red running shoes product photo"
-                autocomplete="off"
-              />
-            </label>
+      <section id="product" class="page product-page"><div class="section-intro"><p class="eyebrow">01 / The workflow</p><h2>Less admin. More<br /><em>creative momentum.</em></h2><p>Drop your images, add the context, and let DropTag handle the invisible work of making assets useful everywhere they go.</p></div><div class="feature-grid"><article class="feature-card feature-large"><span class="feature-number">01</span><div class="feature-art art-organize"><div class="art-folder">assets / 2024 <span>24</span></div><div class="art-file">campaign-hero.jpg <b>SEO ready</b></div><div class="art-file muted-file">lookbook-detail.png <b>pending</b></div></div><h3>Organize once.<br />Find forever.</h3><p>Generate clean filenames and consistent metadata that your whole team can search and understand.</p></article><article class="feature-card"><span class="feature-number">02</span><div class="feature-art art-tags"><span>editorial</span><span>red shoes</span><span>spring 2024</span><span>product</span><span>campaign</span></div><h3>Context, at scale.</h3><p>Apply titles, descriptions, keywords, and ratings across a whole batch in one pass.</p></article><article class="feature-card dark-feature"><span class="feature-number">03</span><div class="feature-art art-export"><span>JPG</span><span>IPTC</span><span>EXIF</span></div><h3>Ready for<br />wherever next.</h3><p>Download polished JPGs with metadata that survives the handoff to clients, marketplaces, and Windows.</p></article></div></section>
 
-            <label class="field">
-              <span>Description</span>
-              <textarea
-                id="description"
-                name="description"
-                rows="2"
-                placeholder="Short SEO description"
-              ></textarea>
-            </label>
+      <section id="workspace" class="page workspace-page"><div class="workspace-heading"><div><p class="eyebrow">Workspace / New batch</p><h2>Enrich your assets.</h2></div><span class="live-pill"><i></i> Secure processing</span></div><form id="tag-form" class="workspace" novalidate><div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Upload images"><input id="file-input" type="file" accept=".jpg,.jpeg,.png,.webp,.bmp,.tif,.tiff,image/*" multiple hidden /><div class="dropzone-inner"><span class="dropzone-icon">↑</span><p class="dropzone-title">Drop images here</p><p class="dropzone-hint">or click to browse · JPG, PNG, WebP</p></div><ul id="file-list" class="file-list" hidden></ul></div><div class="panel"><div class="panel-heading"><div><span class="mini-label">Metadata profile</span><h3>Tell your images what they are.</h3></div><span class="profile-badge">Default</span></div><div class="fields"><label class="field"><span>Title</span><input id="title" name="title" type="text" placeholder="Red running shoes product photo" autocomplete="off" /></label><label class="field"><span>Description</span><textarea id="description" name="description" rows="2" placeholder="Short SEO description"></textarea></label><label class="field field-grow"><span>Keywords</span><textarea id="keywords" name="keywords" rows="3" placeholder="running shoes, red sneakers, footwear" required></textarea></label><div class="footer-row"><fieldset class="rating-field"><legend>Rating</legend><div class="stars" id="stars" role="radiogroup" aria-label="Star rating"><button type="button" data-value="1" aria-label="1 star">★</button><button type="button" data-value="2" aria-label="2 stars">★</button><button type="button" data-value="3" aria-label="3 stars">★</button><button type="button" data-value="4" aria-label="4 stars">★</button><button type="button" data-value="5" aria-label="5 stars" class="on">★</button></div><input type="hidden" id="rating" name="rating" value="5" /></fieldset><button id="submit-btn" type="submit" class="button button-primary cta"><span class="cta-label">Tag &amp; download <span>↗</span></span><span class="cta-busy"><span class="spinner"></span> Processing...</span></button></div></div></div></form></section>
 
-            <label class="field field-grow">
-              <span>Keywords</span>
-              <textarea
-                id="keywords"
-                name="keywords"
-                rows="3"
-                placeholder="running shoes, red sneakers, footwear"
-                required
-              ></textarea>
-            </label>
+      <section id="pricing" class="page pricing-page"><div class="section-intro centered"><p class="eyebrow">02 / Simple pricing</p><h2>Pay once. Keep<br /><em>your workflow moving.</em></h2><p>Choose the plan that matches the way you ship. Secure checkout will open in a new tab.</p></div><div class="pricing-grid"><article class="price-card"><span class="price-label">Annual</span><h3>€35 <small>/ year</small></h3><p>For creators who want a clean metadata workflow all year.</p><a class="button button-outline checkout-link" data-plan="annual" href="#checkout">Choose annual <span>↗</span></a><ul><li>2,000 assets per year</li><li>EXIF + IPTC metadata</li><li>Clean SEO filenames</li></ul></article><article class="price-card featured-price"><span class="popular">Best value</span><span class="price-label">Lifetime</span><h3>€45 <small>/ once</small></h3><p>One payment for creators who want DropTag in their toolkit forever.</p><a class="button button-primary checkout-link" data-plan="lifetime" href="#checkout">Get lifetime access <span>↗</span></a><ul><li>Unlimited access to the app</li><li>All metadata tools included</li><li>Future core updates included</li></ul></article></div></section>
 
-            <div class="footer-row">
-              <fieldset class="rating-field">
-                <legend>Rating</legend>
-                <div class="stars" id="stars" role="radiogroup" aria-label="Star rating">
-                  <button type="button" data-value="1" aria-label="1 star">★</button>
-                  <button type="button" data-value="2" aria-label="2 stars">★</button>
-                  <button type="button" data-value="3" aria-label="3 stars">★</button>
-                  <button type="button" data-value="4" aria-label="4 stars">★</button>
-                  <button type="button" data-value="5" aria-label="5 stars" class="on">★</button>
-                </div>
-                <input type="hidden" id="rating" name="rating" value="5" />
-              </fieldset>
-
-              <button id="submit-btn" type="submit" class="cta">
-                <span class="cta-label">
-                  Tag &amp; download
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path
-                      d="M5 12h14m0 0l-5-5m5 5l-5 5"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
-                <span class="cta-busy">
-                  <span class="spinner" aria-hidden="true"></span>
-                  Processing…
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>
+      <section id="guides" class="page guides-page"><div class="guide-copy"><p class="eyebrow">03 / Field notes</p><h2>Good metadata is<br /><em>quiet leverage.</em></h2><p>Learn the small systems that make a visual library easier to search, share, and sell.</p><a class="text-link" href="#guides">Browse the guide library <span>↗</span></a></div><div class="guide-list"><a href="#guides"><span>01</span><strong>Build a keyword system your team will actually use</strong><small>6 min read ↗</small></a><a href="#guides"><span>02</span><strong>Why filenames still matter for image SEO</strong><small>4 min read ↗</small></a><a href="#guides"><span>03</span><strong>The handoff checklist for client-ready assets</strong><small>8 min read ↗</small></a></div></section>
     </main>
-
+    <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark"><i></i><i></i><i></i></span><span>DropTag</span></a><span>Metadata for the work that matters.</span><div><a href="#pricing">Pricing</a><a href="#guides">Guides</a><a href="#workspace">Workspace</a></div></footer>
     <p id="toast" class="toast" role="status" hidden></p>
     <script src="/static/app.js"></script>
   </body>

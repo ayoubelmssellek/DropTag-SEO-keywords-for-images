@@ -39,3 +39,11 @@ Vercel is suitable for small image batches. Serverless platforms have upload,
 execution-time, and memory limits. If users need large images or many images at
 once, host this FastAPI backend on Render, Railway, or another Python host and
 keep the static frontend on Vercel.
+
+### Connect checkout
+
+The pricing buttons are prepared for hosted checkout links. Create one payment
+link for the annual plan (€35/year) and one for the lifetime plan (€45 once) in
+Stripe Payment Links, Lemon Squeezy, or a similar provider. Then paste the URLs
+into `checkoutUrls.annual` and `checkoutUrls.lifetime` near the top of
+`static/app.js`. The buttons will open the configured checkout in a new tab.
