@@ -22,3 +22,20 @@ Keep the black window open while you use the app. Press Ctrl+C to stop.
 Right-click the downloaded **`.jpg`** → **Properties → Details** → Title / Tags / Comments / Rating.
 
 > Windows does not show Tags on PNG. DropTag always outputs JPG.
+
+## Deploy on Vercel
+
+The web app uses FastAPI, and Vercel can run it as a Python serverless function.
+
+1. Push this folder to a GitHub repository.
+2. In Vercel, choose **Add New Project** and import the repository.
+3. Leave the framework preset as **Other** and deploy.
+4. Open the Vercel URL and test with one small JPG first.
+
+The `api/index.py` and `vercel.json` files are the Vercel adapter. Do not remove
+`requirements.txt`; Vercel uses it to install Pillow and the metadata packages.
+
+Vercel is suitable for small image batches. Serverless platforms have upload,
+execution-time, and memory limits. If users need large images or many images at
+once, host this FastAPI backend on Render, Railway, or another Python host and
+keep the static frontend on Vercel.
